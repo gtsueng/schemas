@@ -72,7 +72,64 @@
       },
       "schema:isPartOf": {
         "@id": "https://discovery.biothings.io/view/n3c/"
-      }
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Descriptive name of the dataset",
+            "type": "string"
+          },
+          "description": {
+            "description": "Longer description of what is contained in the dataset",
+            "type": "string"
+          },
+          "distribution": {
+            "description": "Available downloads of the dataset.",
+            "oneOf": [{
+                "$ref": "#/definitions/datadownload"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/datadownload"
+                }
+              }
+            ]
+          },
+          "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "required": [
+          "name",
+          "description"],
+        "definitions": {
+            "datadownload": {
+            "description": "A dataset in downloadable form.",
+            "@type": "DataDownload",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "dateModified": {
+                "type": "string",
+                "format": "date"
+              },
+              "contentUrl": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": [
+              "dateModified",
+              "contentUrl"
+            ]
+          }
     },
     {"@id":"n3c:name","@type":"rdf:Property","rdfs:comment":"Short, descriptive title for the dataset","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"n3c:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"n3c:description","@type":"rdf:Property","rdfs:comment":"Longer description of what was contained in the dataset. For example, dataset fields, ...","rdfs:label":"description","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:description"},"schema:domainIncludes":{"@id":"n3c:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},
     {"@id":"n3c:measurementTechnique","@type":"rdf:Property","rdfs:comment":"Measurement technique(s) used in collecting the dataset, e.g. RNA sequencing","rdfs:label":"measurementTechnique","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:measurementTechnique"},"schema:domainIncludes":{"@id":"n3c:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"n3c:variableMeasured","@type":"rdf:Property","rdfs:comment":"The factors or variables measured in the dataset","rdfs:label":"variableMeasured","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:variableMeasured"},"schema:domainIncludes":{"@id":"n3c:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},
