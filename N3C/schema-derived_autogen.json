@@ -1,0 +1,90 @@
+
+DDE
+Data Discovery Engine
+
+    Discovery Guide
+    Schema Playground
+    Data Portals
+    Registry
+    gtsueng user photo
+    Logout
+
+Editor
+What's this
+
+    Logged in as gtsueng
+    Namespace n3c
+    New Class Added
+    Preview
+    Download
+    Help! 
+
+Show Descriptions
+YOUR CLASS schema:Dataset NcccDataset
+Add properties here
+schema:Thing schema:CreativeWork Dataset
+(6 properties)
+distribution
+includedInDataCatalog
+issn
+measurementTechnique
+variableMeasured
+variablesMeasured
+Thing
+(12 properties)
+schema:Thing CreativeWork
+(89 properties)
+
+Done editing? Easy! Click Download Host your schema file*. Eg. on GitHub
+
+Done with that too? Visualize, Register and share your schema here: Schema Playground
+* Please note that embedded JSON Schema validation is auto-generated from this editor. You may want to edit that manually to satisfy your individual needs.
+Data Discovery Engine
+Home
+About
+FAQ
+Discovery Guide
+Schema Playground
+Contact US
+Email
+Contribute
+GitHub
+
+2020 Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license.
+Preview
+
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "n3c": "http://discovery.biothings.io/"
+  },
+  "@graph": [
+    {
+      "@id": "n3c:NcccDataset",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "this is a schema derived directly from schema.org classes",
+      "rdfs:label": "NcccDataset",
+      "rdfs:subClassOf": {
+        "@id": "schema:Dataset"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "variableMeasured": {
+            "description": "The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.",
+            "type": "string"
+          },
+          "issn": {
+            "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    }
+  ]
+}
+

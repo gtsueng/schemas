@@ -9,21 +9,21 @@
     {
       "@id": "n3c:NcccDataset",
       "@type": "rdfs:Class",
-      "rdfs:comment": "This is the class derived from the Outbreak Dataset",
+      "rdfs:comment": "This is a schema extended from the bte:BiomedicalDataset schema",
       "rdfs:label": "NcccDataset",
       "rdfs:subClassOf": {
-        "@id": "outbreak:Dataset"
+        "@id": "bts:BioMedicalDataset"
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
-          "doi": {
-            "description": "DOI for the dataset if available",
+          "about": {
+            "description": "The subject matter of the content.",
             "type": "string"
           },
-          "curationDate": {
-            "description": "The date this resource was added to outbreak.info, or the date when this resource was updated in outbreak.info",
+          "variableMeasured": {
+            "description": "The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.",
             "type": "string"
           }
         },
