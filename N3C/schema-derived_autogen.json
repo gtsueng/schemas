@@ -1,58 +1,3 @@
-
-DDE
-Data Discovery Engine
-
-    Discovery Guide
-    Schema Playground
-    Data Portals
-    Registry
-    gtsueng user photo
-    Logout
-
-Editor
-What's this
-
-    Logged in as gtsueng
-    Namespace n3c
-    New Class Added
-    Preview
-    Download
-    Help! 
-
-Show Descriptions
-YOUR CLASS schema:Dataset NcccDataset
-Add properties here
-schema:Thing schema:CreativeWork Dataset
-(6 properties)
-distribution
-includedInDataCatalog
-issn
-measurementTechnique
-variableMeasured
-variablesMeasured
-Thing
-(12 properties)
-schema:Thing CreativeWork
-(89 properties)
-
-Done editing? Easy! Click Download Host your schema file*. Eg. on GitHub
-
-Done with that too? Visualize, Register and share your schema here: Schema Playground
-* Please note that embedded JSON Schema validation is auto-generated from this editor. You may want to edit that manually to satisfy your individual needs.
-Data Discovery Engine
-Home
-About
-FAQ
-Discovery Guide
-Schema Playground
-Contact US
-Email
-Contribute
-GitHub
-
-2020 Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license.
-Preview
-
 {
   "@context": {
     "schema": "http://schema.org/",
@@ -87,4 +32,3 @@ Preview
     }
   ]
 }
-
