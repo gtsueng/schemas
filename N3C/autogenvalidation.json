@@ -1,0 +1,64 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "n3c": "http://discovery.biothings.io/"
+  },
+  "@graph": [
+    {
+      "@id": "n3c:NcccDataset",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "spin off dataset class for N3C",
+      "rdfs:label": "NcccDataset",
+      "rdfs:subClassOf": {
+        "@id": "outbreak:Dataset"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "measurementTechnique": {
+            "description": "A technique or technology used in a Dataset (or DataDownload, DataCatalog),\ncorresponding to the method used for measuring the corresponding variable(s) (described using variableMeasured). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.
+
+\n\nFor example, if variableMeasured is: molecule concentration, measurementTechnique could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\".
+
+\n\nIf the variableMeasured is \"depression rating\", the measurementTechnique could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\".
+
+\n\nIf there are several variableMeasured properties recorded for some given data object, use a PropertyValue for each variableMeasured and attach the corresponding measurementTechnique.",
+            "enum": []
+          },
+          "infectiousAgent": {
+            "description": "The actual infectious agent, such as a specific bacterium",
+            "type": "string"
+          },
+          "infectiousDisease": {
+            "description": "The infectious disease or medical condition caused by the infectious agent, such as a Covid-19",
+            "type": "string"
+          },
+          "doi": {
+            "description": "DOI for the dataset if available",
+            "type": "string"
+          },
+          "topicCategory": {
+            "description": "Applicable outbreak.info category",
+            "type": "string"
+          },
+          "includedInDataCatalog": {
+            "description": "A data catalog which contains this dataset.",
+            "type": "object",
+            "properties": {
+              "name": {
+                "const": "CTSA Datasets"
+              },
+              "url": {
+                "const": "https://ctsa.ncats.nih.gov/cd2h/"
+              }
+            }
+          }
+        },
+        "required": []
+      }
+    }
+  ]
+}
